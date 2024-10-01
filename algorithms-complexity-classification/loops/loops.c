@@ -53,7 +53,10 @@ void f4(int n)
         for(j=0; j<n; j++)
         {
             for(k=0; k<n; k++)
+            {
+                INC_PER_COUNT(i, count);
                 count++;      
+            }
         }
     }
 }
@@ -64,10 +67,13 @@ void f5(int n)
     int i, j, k;
     for(i=0; i<n; i++)
     {
-        for(j=0; j<n; j++)
+        for(j=i; j<i+2; j++)
         {
             for(k=0; k<n; k++)
-                count++;      
+            {
+                INC_PER_COUNT(i, count);
+                count++;   
+            }
         }
     }
 }
@@ -87,6 +93,12 @@ int main (int argc, char *argv[])
 
         else if (atoi(argv[1]) == 3)
             f3(atoi(argv[2]));
+
+        else if (atoi(argv[1]) == 4)
+            f4(atoi(argv[2]));
+
+        else if (atoi(argv[1]) == 5)
+            f5(atoi(argv[2]));
         else 
         { printf(MSG_EX_WRONGARGS_TYPE); exit(EX_WRONGARG_TYPE); }
     }
