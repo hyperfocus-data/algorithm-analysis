@@ -33,13 +33,41 @@ void f2(int n)
 void f3(int n)
 {
     int count = 1;
-    int i;
-    for(i = 1; i < n; i=i++)
+    int i, j;
+    for(i=1; i<n; i++)
     {
-        for(int j = 1; j < n; j=j+j)
+        for (j=1; j<n; j=j+j)
         {
             INC_PER_COUNT(i, count);
             count++;
+        }
+    }
+}
+
+void f4(int n)
+{
+    int count = 1;
+    int i, j, k;
+    for(i=0; i<n; i++)
+    {
+        for(j=0; j<n; j++)
+        {
+            for(k=0; k<n; k++)
+                count++;      
+        }
+    }
+}
+
+void f5(int n)
+{
+    int count = 1;
+    int i, j, k;
+    for(i=0; i<n; i++)
+    {
+        for(j=0; j<n; j++)
+        {
+            for(k=0; k<n; k++)
+                count++;      
         }
     }
 }
